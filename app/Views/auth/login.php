@@ -82,9 +82,7 @@
                             </div>
                         </div>
                         <div class="col-lg-6 d-flex align-items-center">
-
                             <img src="<?= base_url(); ?>/img/login.jpg" alt="login" width="100%">
-
                         </div>
                     </div>
                 </div>
@@ -155,6 +153,16 @@
                             })
                             $("#btn-login").html('Login');
                         }
+                    },
+                    error: function(e) {
+                        Swal.fire({
+                            position: 'top-end',
+                            icon: 'error',
+                            title: "Permintaan login gagal dilakukan. silahkan refresh ulang atau login kembali nanti",
+                            showConfirmButton: true,
+                            timer: 3000
+                        })
+                        $("#btn-login").html('Login');
                     }
                 })
             })

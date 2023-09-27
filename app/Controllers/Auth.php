@@ -63,6 +63,10 @@ class Auth extends BaseController
                 "pesan" => 'Login Berhasil',
                 "url" => site_url("produk"),
             ];
+        } elseif ($httpCode == 500) {
+            $view_data = [
+                "pesan" => 'Login gagal dilakukan. Mungkin terdapat masalah atau serve sedang maintanance.',
+            ];
         } else {
             $msg = json_decode($response);
             $view_data = [
